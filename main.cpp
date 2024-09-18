@@ -10,18 +10,26 @@ int main(){
   const float flower_cups = 2.75;
   const int cookies_recipe = 48;
 
-//get # of cookies from user
-  float(input "Enter number of cookies: ") = num_of_cookies
+//Variables
+  int num_of_cookies;
+  float sugar_needed, butter_needed, flour_needed;
+
+ // Get number of cookies from user
+  cout << "Enter number of cookies: ";
+  cin >> num_of_cookies;
 
 //calulations
-  float sugar_needed = (num_of_cookies / cookies_recipe) * sugar_cups;
-  float butter_needed = (num_of_cookies / cookies_recipe) * butter_cups;
-  float flour_needed = (num_of_cookies / cookies_recipe) * flower_cups;
+  sugar_needed = (num_of_cookies / static_cast<float>(cookies_recipe)) * sugar_cups;
+  butter_needed = (num_of_cookies / static_cast<float>(cookies_recipe)) * butter_cups;
+  flour_needed = (num_of_cookies / static_cast<float>(cookies_recipe)) * flower_cups;
 
-//Display
-  print(f"To make {num_of_cookies} cookies, you will need: "))
-  print(f"{sugar_needed} cups of sugar")
-  print(f"{butter_needed} cups of butter")
-  print(f"{flour_needed} cups of flour")
+ // Display
+  cout << "To make " << num_of_cookies << " cookies, you will need:" << endl;
+  cout << sugar_needed << " cups of sugar" << endl;
+  cout << butter_needed << " cups of butter" << endl;
+  cout << flour_needed << " cups of flower" << endl;
+
+  return 0;
+}
 
   
