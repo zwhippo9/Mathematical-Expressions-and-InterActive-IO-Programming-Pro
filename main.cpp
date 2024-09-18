@@ -1,8 +1,11 @@
 #include <iostream>
 #include <cmath> // for pow function
+#include <iomanip>
+
+using namespace std;
+
 int main() {
-//constants
-  double principle =0.0;
+  double principle;
   double rate;
   double time;
   double interest;
@@ -18,16 +21,15 @@ int main() {
 
 // calculate amount
   amount = principle * pow((1 + rate), time);
+  interest = amount - principle;
   
-//calculate interest
-    interest = amount - principle;
-
 //Display to user
-  cout << "Interest rate: " << rate << endl;  
+  cout << fixed << setprecision(2);
+  cout << "Interest rate: " << rate * 100 << "%" << endl;  
   cout << "Time: " << time << endl;
-  cout << "Principle: " << principle << endl;
-  cout << "Total amount after interest: " << amount << endl;
-  cout << "Interest earned: " << interest << endl;
+  cout << "Principle: $" << principle << endl;
+  cout << "Total amount after interest: $" << amount << endl;
+  cout << "Interest earned: $" << interest << endl;
 
 return 0;
 }
